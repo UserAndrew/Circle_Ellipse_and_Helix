@@ -38,9 +38,7 @@ struct Circle : ICurve
     void printCoordinatesPoint(double) override;
     void printCoordinatesDerivate(double) override;
     Figures getType() override;
-    double getR() {return R;}
-
-    friend bool operator< (const Circle& c1, const Circle& c2);
+    double getR() const {return R;}
 
 private:
     double x;

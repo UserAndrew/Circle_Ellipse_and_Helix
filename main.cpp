@@ -65,18 +65,23 @@ int main()
         }
     }
 
-    double t = M_PI/4;
+    double t = M_PI_4;
     for(auto &elem : lines)
     {
         elem->printCoordinatesPoint(t);
         elem->printCoordinatesDerivate(t);
         if(elem->getType() == Figures::CIRCLE)
         {
-            circles.push_back(std::dynamic_pointer_cast<Circle>(elem));
+            circles.push_back(std::static_pointer_cast<Circle>(elem));
         }
     }
 
-    std::sort(circles.begin(), circles.end());
+    std::sort(circles.begin(), circles.end(), [](const std::shared_ptr<Circle> &t1,std::shared_ptr<Circle> &t2)->bool
+    {
+
+        return t1->getR() < t2->getR();
+
+    });
 
     double sum = 0;
     for(auto &elem : circles)

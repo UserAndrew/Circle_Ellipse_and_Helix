@@ -47,11 +47,6 @@ Figures Circle::getType()
     return Figures::CIRCLE;
 }
 
-bool operator< (const Circle& c1, const Circle& c2)
-{
-    return c1.R < c2.R;
-}
-
 Coordinates Ellipse::getCoordinates(double t)
 {
     Coordinates coordinate;
