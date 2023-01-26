@@ -78,9 +78,7 @@ int main()
 
     std::sort(circles.begin(), circles.end(), [](const std::shared_ptr<Circle> &t1,std::shared_ptr<Circle> &t2)->bool
     {
-
         return t1->getR() < t2->getR();
-
     });
 
     double sum = 0;
